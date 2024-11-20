@@ -5,3 +5,22 @@ paragraph.addEventListener("click", function() {
     el.textContent= "clickされました";
 });
 
+//模範解答
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'y') {
+        let p = document.createElement('p');
+        p.textContent = '「y」キーが入力されました。';
+        document.getElementById('key').appendChild(p);
+    }
+});
+
+let input = document.getElementsByTagName('input');
+
+for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener('focus', function() {
+        this.style['background-color'] = 'purple';
+    });
+    input[i].addEventListener('blur', function() {
+        this.style['background-color'] = 'white';
+    });
+}
